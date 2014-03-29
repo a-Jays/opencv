@@ -2124,7 +2124,7 @@ float CvSVM::predict( const float* row_sample, int row_len, bool returnDFVal ) c
         for( i = 0; i < sv_count; i++ )
             sum += buffer[i]*df->alpha[i];
 
-        result = params.svm_type == ONE_CLASS ? (float)(sum > 0) : (float)sum;
+        result = params.svm_type == ONE_CLASS ? (float)sum : (float)sum;       //(float)(sum>0) : (float) sum
     }
     else if( params.svm_type == C_SVC ||
              params.svm_type == NU_SVC )
